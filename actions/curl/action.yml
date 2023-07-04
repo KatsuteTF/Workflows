@@ -1,0 +1,15 @@
+name: cURL
+description: cURL
+inputs:
+  url:
+    description: URL to download from
+    required: true
+  file:
+    description: File to download to
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Download ${{ inputs.url }}
+      shell: bash
+      run: curl -L -k -o ${{ inputs.file }} ${{ inputs.url }}

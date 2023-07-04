@@ -1,0 +1,27 @@
+name: SourcePawn CI
+
+on:
+  workflow_call:
+    inputs:
+      file:
+        type: string
+        required: true
+      sourcepawn-version:
+        type: string
+        default: "1.11"
+        required: false
+
+jobs:
+  ci:
+    name: Compile (SourcePawn ${{ inputs.sourcepawn-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install SourcePawn ${{ inputs.sourcepawn-version }}
+        uses: KatsuteTF/Workflows/actions/setup-sourcepawn@main
+
+      - name: Compile ${{ inputs.file }}
+        run: spcomp ${{ inputs.file }}

@@ -1,0 +1,14 @@
+name: spcomp
+description: SourceMod compiler
+inputs:
+  sourcemod-version:
+    description: SourceMod version to compile with
+    required: false
+    default: "1.11"
+runs:
+  using: composite
+  steps:
+    - name: Install SourceMod ${{ inputs.sourcemod-version }}
+      uses: rumblefrog/setup-sp@v1.2.2
+      with:
+        version: ${{ inputs.sourcemod-version }}

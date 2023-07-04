@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    labels: []
+    assignees: [Katsute]
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: US/Eastern
+    open-pull-requests-limit: 10
+  - package-ecosystem: github-actions
+    directory: /actions/setup-sourcepawn
+    labels: []
+    assignees: [Katsute]
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: US/Eastern
+    open-pull-requests-limit: 10
+  - package-ecosystem: github-actions
+    directory: /actions/curl
+    labels: []
+    assignees: [Katsute]
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: US/Eastern
+    open-pull-requests-limit: 10
