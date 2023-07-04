@@ -30,8 +30,13 @@ jobs:
       - name: Compile ${{ inputs.file }}
         run: spcomp ${{ inputs.file }}
 
+      - name: Format Name
+        env:
+          sp: ${{ inputs.file }}
+        run: echo "smx=${sp//.sp/.smx}" >> $GITHUB_ENV
+
       - name: Deploy to GitHub Releases
         uses: AButler/upload-release-assets@v2.0.2
         with:
-          files: 'target/*.jar'
+          files: ${{ env.smx }}
           repo-token: ${{ secrets.token }}
