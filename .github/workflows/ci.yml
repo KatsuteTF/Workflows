@@ -24,4 +24,4 @@ jobs:
         uses: KatsuteTF/Workflows/actions/setup-sourcepawn@main
 
       - name: Compile ${{ inputs.file }}
-        run: spcomp ${{ inputs.file }}
+        run: spcomp "${{ inputs.file }}"

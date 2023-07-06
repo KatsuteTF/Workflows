@@ -27,13 +27,13 @@ jobs:
       - name: Install SourcePawn ${{ inputs.sourcepawn-version }}
         uses: KatsuteTF/Workflows/actions/setup-sourcepawn@main
 
-      - name: Compile ${{ inputs.file }}
-        run: spcomp ${{ inputs.file }}
-
       - name: Format Name
         env:
           sp: ${{ inputs.file }}
         run: echo "smx=${sp//.sp/.smx}" >> $GITHUB_ENV
+
+      - name: Compile ${{ inputs.file }}
+        run: spcomp "${{ inputs.file }}" -o "${{ env.smx }}"
 
       - name: Deploy to GitHub Releases
         uses: AButler/upload-release-assets@v2.0.2
