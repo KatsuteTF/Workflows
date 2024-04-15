@@ -36,7 +36,7 @@ jobs:
         run: spcomp "${{ inputs.file }}" -o "${{ env.smx }}"
 
       - name: Deploy to GitHub Releases
-        uses: AButler/upload-release-assets@v2.0.2
+        uses: AButler/upload-release-assets@v3.0
         with:
           files: ${{ env.smx }}
           repo-token: ${{ secrets.token }}
