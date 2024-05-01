@@ -22,6 +22,8 @@ jobs:
 
       - name: Install SourcePawn ${{ inputs.sourcepawn-version }}
         uses: KatsuteTF/Workflows/actions/setup-sourcepawn@main
+        with:
+          sourcemod-version: ${{ inputs.sourcepawn-version }}
 
       - name: Compile ${{ inputs.file }}
         run: spcomp "${{ inputs.file }}"

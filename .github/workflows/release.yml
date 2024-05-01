@@ -26,6 +26,8 @@ jobs:
 
       - name: Install SourcePawn ${{ inputs.sourcepawn-version }}
         uses: KatsuteTF/Workflows/actions/setup-sourcepawn@main
+        with:
+          sourcemod-version: ${{ inputs.sourcepawn-version }}
 
       - name: Format Name
         env:
