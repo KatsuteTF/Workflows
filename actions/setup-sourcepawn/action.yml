@@ -9,6 +9,6 @@ runs:
   using: composite
   steps:
     - name: Install SourceMod ${{ inputs.sourcemod-version }}
-      uses: rumblefrog/setup-sp@v1.2.2
+      uses: rumblefrog/setup-sp@v1.2.4
       with:
         version: ${{ inputs.sourcemod-version }}
