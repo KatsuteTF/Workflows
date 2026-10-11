@@ -4,7 +4,7 @@ inputs:
   sourcemod-version:
     description: SourceMod version to compile with
     required: false
-    default: "1.11"
+    default: "1.13"
 runs:
   using: composite
   steps:
